@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-surface text-navy;
+    margin: 0;
+    overscroll-behavior: none;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100dvh;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-violet text-white font-semibold rounded-btn h-btn px-6 flex items-center justify-center gap-2 transition-opacity active:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed min-h-touch cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-violet text-violet font-semibold rounded-btn h-btn px-6 flex items-center justify-center gap-2 bg-transparent transition-opacity active:opacity-80 min-h-touch cursor-pointer;
+  }
+
+  .btn-danger {
+    @apply bg-red-propulsion text-white font-semibold rounded-btn h-btn px-6 flex items-center justify-center gap-2 transition-opacity active:opacity-80 min-h-touch cursor-pointer;
+  }
+
+  .btn-whatsapp {
+    @apply bg-whatsapp text-white font-semibold rounded-btn px-4 py-2.5 flex items-center justify-center gap-2 transition-opacity active:opacity-80 min-h-touch cursor-pointer;
+  }
+
+  .card {
+    @apply bg-white rounded-card shadow-card;
+  }
+
+  .input {
+    @apply w-full border border-gray-200 rounded-btn px-4 py-3 text-sm focus:outline-none focus:border-violet bg-white transition-colors;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-violet-light text-violet;
+  }
+
+  .safe-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
+  }
+
+  .page {
+    @apply safe-bottom px-4 pt-4;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
